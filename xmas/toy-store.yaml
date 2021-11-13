@@ -13,5 +13,3 @@ wifi: !include includes/wifi.yaml
 interval: !include includes/interval.yaml
 output: !include includes/output.yaml
 light: !include includes/light.yaml
-
-# this is a test

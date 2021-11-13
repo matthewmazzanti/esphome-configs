@@ -1,0 +1,73 @@
+esphome:
+  name: esp_current_sensor
+  platform: ESP32
+  board: nodemcu-32s
+
+logger:
+api:
+ota:
+
+wifi: !include wifi.yaml
+
+interval:
+  - interval: 1s
+    then:
+      if:
+        condition:
+          wifi.connected:
+        then:
+          - output.turn_on: "LED"
+        else:
+          - output.turn_off: "LED"
+          - delay: 0.2s
+          - output.turn_on: "LED"
+
+output:
+  - platform: gpio
+    pin: GPIO2
+    id: "LED"
+
+i2c:
+  id: bus_a
+  scan: True
+
+sensor:
+  - platform: bme280
+    i2c_id: bus_a
+    address: 0x76
+    update_interval: 60s
+    temperature:
+      name: "Basement Temperature"
+      oversampling: 16x
+    pressure:
+      name: "Basement Pressure"
+    humidity:
+      name: "Basement Humidity"
+
+  - platform: ct_clamp
+    sensor: adc_sensor_1
+    name: "Dryer Current"
+    update_interval: 10s
+    filters:
+      - calibrate_linear:
+          - 0 -> 0
+          - 0.3987 -> 6.81
+
+  - platform: adc
+    attenuation: 11db
+    pin: GPIO36
+    id: adc_sensor_1
+
+  - platform: ct_clamp
+    sensor: adc_sensor_2
+    name: "Dishwasher Current"
+    update_interval: 10s
+    filters:
+      - calibrate_linear:
+          - 0 -> 0
+          - 0.8897 -> 6.81
+
+  - platform: adc
+    attenuation: 11db
+    pin: GPIO39
+    id: adc_sensor_2

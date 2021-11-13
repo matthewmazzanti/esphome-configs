@@ -1,0 +1,11 @@
+- interval: 1s
+  then:
+    if:
+      condition:
+        wifi.connected:
+      then:
+        - output.turn_on: "LED"
+      else:
+        - output.turn_off: "LED"
+        - delay: 0.2s
+        - output.turn_on: "LED"

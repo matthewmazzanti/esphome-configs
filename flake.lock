@@ -1,0 +1,42 @@
+{
+  "nodes": {
+    "esphome-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1631642904,
+        "narHash": "sha256-hjbTr+G1Ejv4aeNrrIEB5XLwHpep3GLPspFN32A6tEI=",
+        "ref": "remote_values",
+        "rev": "1c9b71e59a6ef7fbf6528cfbadb978595fafefe3",
+        "revCount": 2442,
+        "type": "git",
+        "url": "file:///home/mmazzanti/src/contrib/esphome"
+      },
+      "original": {
+        "ref": "remote_values",
+        "type": "git",
+        "url": "file:///home/mmazzanti/src/contrib/esphome"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1630807268,
+        "narHash": "sha256-+rJqU4BP6O9/lFkWt7XESCAQqEhgXD3LDiMUeu6pxbE=",
+        "path": "/nix/store/v3w6r2a7phmc9jdm4phzhm6prryh2bcb-source",
+        "rev": "33d3282b12347a139d1d7804738b8ea9b642e60b",
+        "type": "path"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "root": {
+      "inputs": {
+        "esphome-src": "esphome-src",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

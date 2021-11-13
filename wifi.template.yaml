@@ -1,0 +1,6 @@
+ssid: "<ssid>"
+password: "<password>"
+
+ap:
+  ssid: "<temp ap name>"
+  password: "<temp ap password>"

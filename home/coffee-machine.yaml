@@ -1,0 +1,22 @@
+esphome:
+  name: coffee_machine
+  platform: ESP8266
+  board: d1_mini_lite
+
+wifi: !include wifi.yaml
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+switch:
+  - platform: gpio
+    pin: D1
+    name: "Coffee Machine Power"
+    id: cm_power_switch

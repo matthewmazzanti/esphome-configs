@@ -1,0 +1,36 @@
+- platform: monochromatic
+  output: J4_pwm
+  name: J4
+  id: J4
+  effects:
+    - lambda:
+        name: Candle
+        update_interval: 200ms
+        lambda: candle(id(J4));
+- platform: monochromatic
+  output: J3_pwm
+  name: J3
+  id: J3
+  effects:
+    - lambda:
+        name: Candle
+        update_interval: 200ms
+        lambda: candle(id(J3));
+- platform: monochromatic
+  output: J2_pwm
+  name: J2
+  id: J2
+  effects:
+    - lambda:
+        name: Candle
+        update_interval: 200ms
+        lambda: candle(id(J2));
+- platform: monochromatic
+  output: J1_pwm
+  name: J1
+  id: J1
+  effects:
+    - lambda:
+        name: Candle
+        update_interval: 200ms
+        lambda: candle(id(J1));

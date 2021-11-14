@@ -24,10 +24,7 @@ void candle(light::LightState *state, float brightness = 1.0) {
     // Pseudo-random uniform distribution [0-count]
     int random = rand() % range;
     // Brightness step
-    //
-    // When set_publish(false) is fixed
-    // float brightness_step = state->remote_values.get_brightness() / count;
-    float brightness_step = brightness / count;
+    float brightness_step = state->remote_values.get_brightness() / count;
 
     // Reverse iteration, since last items have higher probabilities
     int total = 0;

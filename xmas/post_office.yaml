@@ -1,0 +1,15 @@
+esphome:
+  name: post_office
+  platform: ESP8266
+  board: d1_mini_lite
+  includes:
+    - includes/effects.h
+
+logger:
+api:
+ota:
+
+wifi: !include includes/wifi.yaml
+interval: !include includes/interval.yaml
+output: !include includes/output-r2.yaml
+light: !include includes/light.yaml
